@@ -10,19 +10,26 @@ function App() {
   const [ballCount, setBallCount] = useState(0);
 
   const handleStrike = () => {
-
+    if (strikeCount === 2) resetCounts();
+    else setStrikeCount(strikeCount + 1);
   }
 
   const handleBall = () => {
-    
+    if (ballCount === 3) resetCounts();
+    else setBallCount(ballCount + 1);
   }
 
   const handleFoul = () => {
-    
+    if (strikeCount < 2) setStrikeCount(strikeCount + 1);
   }
 
   const handleHit = () => {
-    
+    resetCounts();
+  }
+
+  const resetCounts = () => {
+    setStrikeCount(0);
+    setBallCount(0);
   }
 
   return (
