@@ -2,9 +2,15 @@ import React from 'react';
 
 const Display = ({ strikeCount, ballCount }) => {
   return (
-    <div>
-      <h2>Balls: <span data-testid="ballCount">{ballCount}</span></h2>
-      <h2>Strikes: <span data-testid="strikeCount">{strikeCount}</span></h2>
+    <div className="display-container">
+      <div className="ball">
+        <h2>Ball</h2>
+        <h2 data-testid="ballCount" className="counter">{ballCount}</h2>
+      </div>
+      <div className="strike">
+        <h2>Strike</h2>
+        <h2 data-testid="strikeCount" className="counter">{strikeCount}</h2>
+      </div>
     </div>
   )
 }
