@@ -15,7 +15,7 @@ const Dashboard = ({ handleStrike, handleBall, handleFoul, handleHit, handleOut 
       <button onClick={() => handleHit()}>
         Hit
       </button>
-      <button onClick={() => handleOut()}>
+      <button onClick={() => handleOut()} data-testid="out-btn">
         Out
       </button>
     </div>

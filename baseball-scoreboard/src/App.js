@@ -16,7 +16,10 @@ function App() {
   const [inningCount, setInningCount] = useState(1);
 
   const handleStrike = () => {
-    if (strikeCount === 2) resetCounts();
+    if (strikeCount === 2) {
+      resetCounts();
+      handleOut();
+    }
     else setStrikeCount(incrementCount(strikeCount));
   }
 

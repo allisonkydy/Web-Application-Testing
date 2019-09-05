@@ -18,14 +18,23 @@ test('dashboard buttons are displaying', () => {
   getByTestId("ball-btn");
   getByText(/foul/i);
   getByText(/hit/i);
+  getByTestId("out-btn");
 })
 
-test('ballCount and strikeCount are initialized to 0', () => {
+test('balls, strikes, out are initialized to 0', () => {
   const { getByTestId } = render(<App />);
   const ballCount = getByTestId("ballCount");
   const strikeCount = getByTestId("strikeCount");
+  const outCount = getByTestId("outCount");
   expect(ballCount.textContent).toBe('0');
-  expect(strikeCount.textContent).toBe('0'); 
+  expect(strikeCount.textContent).toBe('0');
+  expect(outCount.textContent).toBe('0');
+})
+
+test('inning initialized to 1', () => {
+  const { getByTestId } = render(<App />);
+  const inningCount = getByTestId("inningCount");
+  expect(inningCount.textContent).toBe('1');
 })
 
 test('incrementCount adds 1 to counter', () => {
