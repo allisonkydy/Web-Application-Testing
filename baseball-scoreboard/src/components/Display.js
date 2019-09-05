@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Display = () => {
+const Display = ({ strikeCount, ballCount }) => {
   return (
     <div>
 
