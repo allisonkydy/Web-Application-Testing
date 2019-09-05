@@ -5,22 +5,26 @@ import Dashboard from './components/Dashboard';
 
 import './App.css';
 
+export const incrementCount = counter => {
+  return counter + 1;
+}
+
 function App() {
   const [strikeCount, setStrikeCount] = useState(0);
   const [ballCount, setBallCount] = useState(0);
 
   const handleStrike = () => {
     if (strikeCount === 2) resetCounts();
-    else setStrikeCount(strikeCount + 1);
+    else setStrikeCount(incrementCount(strikeCount));
   }
 
   const handleBall = () => {
     if (ballCount === 3) resetCounts();
-    else setBallCount(ballCount + 1);
+    else setBallCount(incrementCount(ballCount));
   }
 
   const handleFoul = () => {
-    if (strikeCount < 2) setStrikeCount(strikeCount + 1);
+    if (strikeCount < 2) setStrikeCount(incrementCount(strikeCount));
   }
 
   const handleHit = () => {

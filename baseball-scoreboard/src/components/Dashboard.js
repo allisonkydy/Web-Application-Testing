@@ -9,10 +9,10 @@ const Dashboard = ({ handleStrike, handleBall, handleFoul, handleHit }) => {
       <button onClick={() => handleBall()} data-testid="ball-btn">
         Ball
       </button>
-      <button onClick={() => handleFoul()} data-testid="foul-btn">
+      <button onClick={() => handleFoul()}>
         Foul
       </button>
-      <button onClick={() => handleHit()} data-testid="hit-btn">
+      <button onClick={() => handleHit()}>
         Hit
       </button>
     </div>
