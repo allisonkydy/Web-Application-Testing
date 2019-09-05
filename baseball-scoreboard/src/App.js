@@ -11,6 +11,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Baseball Scoreboard</h1>
       <Display strikeCount={strikeCount} ballCount={ballCount} />
       <Dashboard strikeCount={strikeCount} ballCount={ballCount} />
     </div>
