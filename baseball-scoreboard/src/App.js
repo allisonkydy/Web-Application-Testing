@@ -14,6 +14,8 @@ function App() {
   const [ballCount, setBallCount] = useState(0);
   const [outCount, setOutCount] = useState(0);
   const [inningCount, setInningCount] = useState(1);
+  const [homeScore, setHomeScore] = useState(0);
+  const [awayScore, setAwayScore] = useState(0);
 
   const handleStrike = () => {
     if (strikeCount === 2) {
@@ -50,6 +52,11 @@ function App() {
     }
   }
 
+  const handleScore = team => {
+    if (team === 'home') setHomeScore(incrementCount(homeScore));
+    else if (team === 'away') setAwayScore(incrementCount(awayScore));
+  }
+
   const handleInning = () => {
     if (inningCount === 7) setInningCount(0);
     else setInningCount(incrementCount(inningCount));
@@ -58,8 +65,8 @@ function App() {
   return (
     <div className="App">
       <h1>Baseball Scoreboard</h1>
-      <Display strikeCount={strikeCount} ballCount={ballCount} outCount={outCount} inningCount={inningCount} />
-      <Dashboard handleStrike={handleStrike} handleBall={handleBall} handleFoul={handleFoul} handleHit={handleHit} handleOut={handleOut} />
+      <Display strikeCount={strikeCount} ballCount={ballCount} outCount={outCount} inningCount={inningCount} homeScore={homeScore} awayScore={awayScore} />
+      <Dashboard handleStrike={handleStrike} handleBall={handleBall} handleFoul={handleFoul} handleHit={handleHit} handleOut={handleOut} handleScore={handleScore} />
     </div>
   );
 }

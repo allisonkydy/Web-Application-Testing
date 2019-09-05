@@ -3,7 +3,7 @@
 }
 
 .display-container {
-  width: 600px;
+  width: 700px;
   height: 300px;
   margin: 0 auto 50px;
   background-color: #467946;
@@ -39,4 +39,8 @@ button {
 button:active {
   transform: translate(4px, 4px);
   box-shadow: none;
+}
+
+.score-btns {
+  margin-top: 40px;
 }
