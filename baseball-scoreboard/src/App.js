@@ -12,6 +12,8 @@ export const incrementCount = counter => {
 function App() {
   const [strikeCount, setStrikeCount] = useState(0);
   const [ballCount, setBallCount] = useState(0);
+  const [outCount, setOutCount] = useState(0);
+  const [inningCount, setInningCount] = useState(1);
 
   const handleStrike = () => {
     if (strikeCount === 2) resetCounts();
@@ -36,11 +38,25 @@ function App() {
     setBallCount(0);
   }
 
+  const handleOut = () => {
+    if (outCount === 2) {
+      handleInning();
+      setOutCount(0);
+    } else {
+      setOutCount(incrementCount(outCount));
+    }
+  }
+
+  const handleInning = () => {
+    if (inningCount === 7) setInningCount(0);
+    else setInningCount(incrementCount(inningCount));
+  }
+
   return (
     <div className="App">
       <h1>Baseball Scoreboard</h1>
-      <Display strikeCount={strikeCount} ballCount={ballCount} />
-      <Dashboard handleStrike={handleStrike} handleBall={handleBall} handleFoul={handleFoul} handleHit={handleHit} />
+      <Display strikeCount={strikeCount} ballCount={ballCount} outCount={outCount} inningCount={inningCount} />
+      <Dashboard handleStrike={handleStrike} handleBall={handleBall} handleFoul={handleFoul} handleHit={handleHit} handleOut={handleOut} />
     </div>
   );
 }

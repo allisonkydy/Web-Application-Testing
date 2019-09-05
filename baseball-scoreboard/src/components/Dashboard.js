@@ -1,6 +1,6 @@
 import React from "react";
 
-const Dashboard = ({ handleStrike, handleBall, handleFoul, handleHit }) => {
+const Dashboard = ({ handleStrike, handleBall, handleFoul, handleHit, handleOut }) => {
   return (
     <div>
       <button onClick={() => handleStrike()} data-testid="strike-btn">
@@ -14,6 +14,9 @@ const Dashboard = ({ handleStrike, handleBall, handleFoul, handleHit }) => {
       </button>
       <button onClick={() => handleHit()}>
         Hit
+      </button>
+      <button onClick={() => handleOut()}>
+        Out
       </button>
     </div>
   );
