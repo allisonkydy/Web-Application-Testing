@@ -1,0 +1,46 @@
+.App {
+  text-align: center;
+}
+
+.display-container {
+  width: 700px;
+  height: 300px;
+  margin: 0 auto 50px;
+  background-color: #467946;
+  box-shadow: 0 5px 10px 0 #7c7c7c;
+  border: 3px solid #777777;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #e6e6e6;
+}
+
+.counter {
+  width: 50px;
+  color: #d80000;
+  padding: 0 5px;
+  font-size: 60px;
+  background-color: #444444;
+  margin: 0 auto 50px;
+}
+
+button {
+  border: 2px solid black;
+  background: transparent;
+  margin: 0 10px;
+  padding: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100px;
+  box-shadow: 4px 4px black;
+  transition: transform 0.2s box-shadow 0.2s;
+}
+
+button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.score-btns {
+  margin-top: 40px;
+}
